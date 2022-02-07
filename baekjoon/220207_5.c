@@ -15,20 +15,24 @@ int main() {
 }
 
 void han_soo(int n) {
+	int count = 0;
+	int n1, n2, n3;
+
 	if (n < 100) {
 		printf("%d", n);
 	}
 
-	else {
-		int n1, n2, n3;
-		int count = 0;
+	else if( n  <1000) {
+		count += 99;
+		for (int i = 100; i < n; i++) {
 
-		n1 = n % 10;			//일의 자리
-		n2 = (n / 10) % 10;		//십의 자리
-		n3 = n / 100;				//백의 자리
+			n1 = i % 10;			//일의 자리
+			n2 = (i / 10) % 10;		//십의 자리
+			n3 = i / 100;				//백의 자리
 
-		if (n1 - n2 == n2 - n3) {
-			count++;
+			if (n1 - n2 == n2 - n3) {
+				count++;
+			}
 		}
 		printf("%d", count);
 	}
