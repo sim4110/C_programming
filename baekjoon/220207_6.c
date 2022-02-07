@@ -9,23 +9,24 @@
 int main() {
 	char num[5], change[5];
 	int i, n, count = 0;
+	int len;
 
 	while (1) {
 		scanf("%s", num);
-		int len = strlen(num);
-
 		if (num[0] == '0') break;
-		n = len;
+		len = strlen(num);
+
+		count = 0;
+		n = len - 1;
+
 		for (i = 0; i < len; i++) {
 			change[n] = num[i];
 			n--;
 		}
 		
-		n = len;
 		for (i = 0; i < len; i++) {
-			if (change[n] == num[i]) {
+			if (change[i] == num[i]) {
 				count++;
-				n--;
 			}
 		}
 
